@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Do This</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Notes</th>
+      <th>Due</th>
+      <th>Done</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @do_this.each do |do_thi| %>
+      <tr>
+        <td><%= do_thi.title %></td>
+        <td><%= do_thi.notes %></td>
+        <td><%= do_thi.due %></td>
+        <td><%= do_thi.done %></td>
+        <td><%= link_to 'Show', do_thi %></td>
+        <td><%= link_to 'Edit', edit_do_thi_path(do_thi) %></td>
+        <td><%= link_to 'Destroy', do_thi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Do thi', new_do_thi_path %>
